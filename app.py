@@ -11,10 +11,11 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    features = [float(x) for x in request.form.values()]
-    prediction = model.predict([features])[0]
-    return render_template("index.html", prediction_text=f"Predicted class: {prediction}")
+    features = ['mean radius', 'mean texture', 'mean perimeter', 'mean area']
+    input_data = [float(request.form[f]) for f in features]
+    prediction = model.predict([input_data])[0]
+    label = "Malignant" if prediction == 1 else "Benign"
+    return render_template("index.html", prediction_text=f"Tumor is likely: {label}")
 
 if __name__ == '__main__':
     app.run(debug=True)
-

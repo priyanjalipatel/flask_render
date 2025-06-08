@@ -6,10 +6,10 @@
 <body>
     <h2>Enter input for prediction</h2>
     <form action="/predict" method="post">
-        <input name="feature1" placeholder="Feature 1" required><br>
-        <input name="feature2" placeholder="Feature 2" required><br>
-        <input name="feature3" placeholder="Feature 3" required><br>
-        <input name="feature4" placeholder="Feature 4" required><br>
+        <input name="mean radius" placeholder="mean radius" required><br>
+        <input name="mean texture" placeholder="mean texture" required><br>
+        <input name="mean perimeter" placeholder="mean perimeter" required><br>
+        <input name="mean area" placeholder="mean area" required><br>
         <input type="submit">
     </form>
     {% if prediction_text %}
